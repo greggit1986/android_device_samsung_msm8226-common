@@ -248,7 +248,8 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw
+    libstagefrighthw \
+    libmm-omxcore
 
 # OMX-addedafyonlin20
 PRODUCT_PROPERTY_OVERRIDES += \
