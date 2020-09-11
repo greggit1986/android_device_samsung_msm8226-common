@@ -77,6 +77,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
 
+# Binder
+PRODUCT_PACKAGES += \
+    libhwbinder \
+    libhidltransport
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
