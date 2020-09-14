@@ -80,7 +80,8 @@ PRODUCT_COPY_FILES += \
 # Binder
 PRODUCT_PACKAGES += \
     libhwbinder \
-    libhidltransport
+    libhidltransport \
+    libjson
 
 # Bluetooth
 PRODUCT_PACKAGES += \
