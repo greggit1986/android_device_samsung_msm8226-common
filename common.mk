@@ -81,7 +81,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libhwbinder \
     libhidltransport \
-    libjson
+    libjson \
+    vndservicemanager
 
 # Bluetooth
 PRODUCT_PACKAGES += \
