@@ -249,7 +249,8 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw \
-    libmm-omxcore
+    libmm-omxcore \
+    android.hardware.cas@1.2-service-lazy
 
 # OMX-addedafyonlin20
 PRODUCT_PROPERTY_OVERRIDES += \
