@@ -254,7 +254,8 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw \
     libmm-omxcore \
-    android.hardware.cas@1.2-service-lazy
+    android.hardware.cas@1.2-service-lazy \
+    libavservices_minijail.vendor
 
 # OMX-addedafyonlin20
 PRODUCT_PROPERTY_OVERRIDES += \
