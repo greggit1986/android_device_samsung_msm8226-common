@@ -116,6 +116,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.hal3on1.use_hwcomposer=1 \
     persist.camera.hal3on1.use_sysfs_torch=1
 
+# Camera-Experimental
+PRODUCT_PACKAGES += \
+    android.frameworks.sensorservice@1.0.vendor \
+
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
