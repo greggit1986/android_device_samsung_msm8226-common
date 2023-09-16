@@ -56,6 +56,15 @@ on fs
     mount_all /vendor/etc/fstab.qcom --early
     swapon_all /vendor/etc/fstab.qcom
 
+# jjadd-debug boot process
+    rm /cache/boot_lc_full.txt
+    rm /cache/boot_lc_crash.txt
+    rm /cache/boot_lc_kernel.txt
+    start boot_lc
+    start boot_lc_kernel
+    start boot_lc_crash
+ # jjadd-debug boot process-end
+
     restorecon_recursive /efs
 
     write /sys/kernel/boot_adsp/boot 1
@@ -691,6 +700,29 @@ service wcnss-service /system/bin/wcnss_service
     group system wifi oem_2950 diag radio
     oneshot
 
+# JJADD-for logs
+service boot_lc /system/bin/logcat -b all -D -f /cache/boot_lc_full.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service boot_lc_crash /system/bin/logcat -b crash -D -f /cache/boot_lc_crash.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service boot_lc_kernel /system/bin/logcat -b kernel -D -f /cache/boot_lc_kernel.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+# JJADD-for logs-end
+
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
 
@@ -750,3 +782,10 @@ on property:persist.sys.ssr.restart_level=1
 
 on property:persist.sys.ssr.restart_level=3
     write /sys/module/subsystem_restart/parameters/restart_level 3    
+
+# JJADD-for logs
+on property:sys.boot_completed=1
+    stop boot_lc
+    stop boot_lc_crash
+    stop boot_lc_kernel
+# JJADD-for logs end

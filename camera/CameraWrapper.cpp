@@ -47,7 +47,6 @@ using android::base::GetProperty;
 enum {
     UNKNOWN = -1,
     S3VE3G,
-    AFYONLTE,
     KMINI3G,
     MS01,
     MATISSE,
@@ -147,10 +146,6 @@ static int get_product_device()
         product_device = MILLET;
     else if (device == "milletltetmo")
         product_device = MILLET;
-    else if (device == "afyonltetmo")
-        product_device = AFYONLTE;
-    else if (device == "afyonltecan")
-        product_device = AFYONLTE;
     else
         product_device = UNKNOWN;
 
