@@ -51,6 +51,7 @@ enum {
     MS01,
     MATISSE,
     MILLET,
+    AFYONLTE,
 };
 
 static int product_device = UNKNOWN;
@@ -146,6 +147,12 @@ static int get_product_device()
         product_device = MILLET;
     else if (device == "milletltetmo")
         product_device = MILLET;
+    else if (device == "afyonltetmo")
+        product_device = AFYONLTE;
+    else if (device == "afyonltecan")
+        product_device = AFYONLTE;
+    else if (device == "afyonlteMetroPCS")
+        product_device = AFYONLTE;
     else
         product_device = UNKNOWN;
 
@@ -223,7 +230,7 @@ static char* camera_fixup_getparams(int id, const char* settings) {
 #endif
 
     params.set(KEY_SUPPORTED_ISO_MODES, iso_values[id]);
-    if (get_product_device() == S3VE3G || get_product_device() == MS01 || get_product_device() == KMINI3G) {
+    if (get_product_device() == S3VE3G || get_product_device() == MS01 || get_product_device() == KMINI3G || get_product_device() == AFYONLTE) {
         params.set(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1280x720");
         params.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES,
                        "auto,asd,action,portrait,landscape,night,night-portrait,theatre,beach,snow,sunset,"

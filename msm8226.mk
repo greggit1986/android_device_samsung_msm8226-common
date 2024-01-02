@@ -46,9 +46,10 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio@2.0-service \
-    android.hardware.audio.effect@2.0-impl \
+    android.hardware.audio@7.0-impl \
+    android.hardware.audio.effect@7.0-impl \
+    android.hardware.audio.effect@2.0-service \
+    android.hardware.audio.service \
     audio.a2dp.default \
     audio.primary.msm8226 \
     audio.r_submix.default \
@@ -71,7 +72,7 @@ TARGET_BOOTANIMATION_HALF_RES := true
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
@@ -79,6 +80,21 @@ PRODUCT_PACKAGES += \
     gralloc.msm8226 \
     hwcomposer.msm8226 \
     memtrack.msm8226
+
+# Display-lin18
+#PRODUCT_PACKAGES += \
+#    android.hardware.graphics.allocator@2.0-impl \
+#    android.hardware.graphics.allocator@2.0-service \
+#    android.hardware.graphics.composer@2.1-service \
+#    android.hardware.graphics.mapper@2.0-impl-2.1 \
+#    android.hardware.memtrack@1.0-impl \
+#    android.hardware.memtrack@1.0-service \
+#    copybit.msm8226 \
+#    gralloc.msm8226 \
+#    hwcomposer.msm8226 \
+#    memtrack.msm8226
+
+
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -209,18 +225,13 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
 # VNDK
-#PRODUCT_COPY_FILES += \
-#    prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so \
-#    prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcutils-v29.so
-
-# VNDK-JJ
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so \
     prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcutils-v29.so
 
 # Wifi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service.legacy \
+    android.hardware.wifi@1.0-service-lazy.legacy \
     dhcpcd.conf \
     hostapd \
     wpa_supplicant \

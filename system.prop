@@ -28,6 +28,9 @@ debug.composition.type=c2d
 debug.disable.bwc=1
 dev.pm.dyn_samplingrate=1
 
+# Display-added lin19
+#debug.renderengine.backend=gles
+
 # fastbootd
 ro.fastbootd.available=true
 
@@ -54,3 +57,6 @@ ril.subscription.types=NV,RUIM
 
 # Time
 persist.timed.enable=true
+
+# Bpf
+ro.kernel.ebpf.supported=false

@@ -2,7 +2,7 @@
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
-        <version>2.0</version>
+        <version>7.0</version>
         <interface>
             <name>IDevicesFactory</name>
             <instance>default</instance>
@@ -11,7 +11,7 @@
     <hal format="hidl">
         <name>android.hardware.audio.effect</name>
         <transport>hwbinder</transport>
-        <version>2.0</version>
+        <version>7.0</version>
         <interface>
             <name>IEffectsFactory</name>
             <instance>default</instance>
@@ -75,6 +75,18 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <!--Lin19OG    -->
+    <hal format="hidl">
+        <name>android.hardware.graphics.composer</name>
+        <transport arch="32">passthrough</transport>
+        <impl level="generic"></impl>
+        <version>2.1</version>
+        <interface>
+            <name>IComposer</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+   <!--Lin18 Composer>
     <hal format="hidl">
         <name>android.hardware.graphics.composer</name>
         <transport>hwbinder</transport>
@@ -84,6 +96,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+   <Lin18 Composer-->
     <hal format="hidl">
         <name>android.hardware.graphics.mapper</name>
         <transport arch="32">passthrough</transport>
