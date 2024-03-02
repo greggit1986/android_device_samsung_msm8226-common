@@ -30,6 +30,3 @@ type nfc_fw_file, file_type;
 type wifi_efs_file, file_type;
 
 type sysfs_io_sched_tuneable, fs_type, sysfs_type;
-
-# JJADD
-type sysfs_disk_stat, fs_type, sysfs_type;

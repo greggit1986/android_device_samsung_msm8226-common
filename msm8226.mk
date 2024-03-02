@@ -44,13 +44,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ld.config.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
 
-# Audio
+# Audio-s3lin20
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
-    android.hardware.audio.effect@2.0-service \
-    android.hardware.audio.service \
-    audio.a2dp.default \
+    android.hardware.audio.service.msm8226 \
+    android.hardware.bluetooth.audio@2.0-impl \
+    audio.bluetooth.default \
     audio.primary.msm8226 \
     audio.r_submix.default \
     audio.usb.default \
@@ -58,6 +58,21 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcompostprocbundle \
     libqcomvoiceprocessing
+
+# Audio-afyonlin19
+#PRODUCT_PACKAGES += \
+#    android.hardware.audio@7.0-impl \
+#    android.hardware.audio.effect@7.0-impl \
+#    android.hardware.audio.effect@2.0-service \
+#    android.hardware.audio.service \
+#    audio.a2dp.default \
+#    audio.primary.msm8226 \
+#    audio.r_submix.default \
+#    audio.usb.default \
+#    libaudio-resampler \
+#    libqcomvisualizer \
+#    libqcompostprocbundle \
+#    libqcomvoiceprocessing
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -86,8 +101,11 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     camera.device@1.0-impl \
     camera.msm8226 \
-    libxml2 \
-    Snap
+    libxml2
+
+# Camera-removed lin20
+#PRODUCT_PACKAGES += \
+#    Snap
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -161,16 +179,33 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# OMX-addedlin20
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.stagefright.ccodec=0 \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
+    debug.stagefright.omx_default_rank=0 \
+    vendor.mediacodec.binder.size=4 \
+    media.stagefright.thumbnail.prefer_hw_codecs=true
+
 # Power HAL
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
+# Touch features
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.touch@1.0-service.samsung
+
 # Preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
-    Snap \
     SystemUI \
     TrebuchetQuickStep
+
+# Preopt-lin19removed
+#PRODUCT_DEXPREOPT_SPEED_APPS += \
+#    Snap
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -217,11 +252,16 @@ PRODUCT_COPY_FILES += \
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service-lazy.legacy \
-    dhcpcd.conf \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf \
-    libwpa_client
+    libwpa_client \
+    android.hardware.wifi.supplicant-V1-ndk \
+    android.hardware.wifi.hostapd-V1-ndk
+
+# Wifi-removedlin20
+#PRODUCT_PACKAGES += \
+#    dhcpcd.conf
 
 PRODUCT_PACKAGES += \
     libcurl \

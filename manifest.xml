@@ -18,6 +18,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.bluetooth.audio</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IBluetoothAudioProvidersFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.bluetooth</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -75,7 +84,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <!--Lin19OG    -->
     <hal format="hidl">
         <name>android.hardware.graphics.composer</name>
         <transport arch="32">passthrough</transport>
@@ -86,17 +94,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-   <!--Lin18 Composer>
-    <hal format="hidl">
-        <name>android.hardware.graphics.composer</name>
-        <transport>hwbinder</transport>
-        <version>2.1</version>
-        <interface>
-            <name>IComposer</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-   <Lin18 Composer-->
     <hal format="hidl">
         <name>android.hardware.graphics.mapper</name>
         <transport arch="32">passthrough</transport>

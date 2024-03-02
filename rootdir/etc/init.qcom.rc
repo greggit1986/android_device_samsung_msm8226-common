@@ -652,10 +652,10 @@ service qcamerasvr /vendor/bin/mm-qcamera-daemon
     user camera
     group camera system inet input graphics bluetooth gps
 
-service qmuxd /vendor/bin/qmuxd
-    class core
-    user radio
-    group radio audio bluetooth gps diag oem_2950 log
+# service qmuxd /vendor/bin/qmuxd
+#     class core
+#     user radio
+#     group radio audio bluetooth gps diag oem_2950 log
 
 service vendor.qseecomd /vendor/bin/qseecomd
     class core
