@@ -143,7 +143,8 @@ PRODUCT_COPY_FILES += \
 # Network - Do not spin up a separate process for the network stack, use an in-process APK.
 PRODUCT_PACKAGES += \
     InProcessNetworkStack \
-    com.android.tethering.inprocess
+    com.android.tethering.inprocess \
+    android.hardware.radio.config@1.0-service
 
 # Offline Charger
 PRODUCT_PACKAGES += \
