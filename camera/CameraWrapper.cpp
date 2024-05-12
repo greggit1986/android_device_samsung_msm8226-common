@@ -262,17 +262,17 @@ static char* camera_fixup_getparams(int id, const char* settings) {
     }
 
 //JJEDIT
-    if (get_product_device() == AFYONLTE) {
+/*    if (get_product_device() == AFYONLTE) {*/
 //        params.set(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1280x720");
-        params.set(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "640x480");
+/*        params.set(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "640x480");
         params.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES,
                        "auto,asd,action,portrait,landscape,night,night-portrait,theatre,beach,snow,sunset,"
-                       "steadyphoto,fireworks,sports,party,candlelight,backlight,flowers,AR");
+                       "steadyphoto,fireworks,sports,party,candlelight,backlight,flowers,AR");*/
         /* If the vendor has HFR values but doesn't also expose that
          * this can be turned off, fixup the params to tell the Camera
          * that it really is okay to turn it off.
          */
-        const char *hfrModeValues = params.get(KEY_VIDEO_HFR_VALUES);
+        /*const char *hfrModeValues = params.get(KEY_VIDEO_HFR_VALUES);
         if (hfrModeValues && !strstr(hfrModeValues, "off")) {
             char hfrModes[strlen(hfrModeValues) + 4 + 1];
             sprintf(hfrModes, "%s,off", hfrModeValues);
@@ -282,14 +282,28 @@ static char* camera_fixup_getparams(int id, const char* settings) {
             params.set(CameraParameters::KEY_SUPPORTED_FLASH_MODES, "auto,on,off,torch");
              params.set(KEY_SUPPORTED_HFR_SIZES, "960x540,720x480");
              params.set(KEY_SUPPORTED_VIDEO_HIGH_FRAME_RATE_MODES, "60,off");
-
+*/
 //            params.set(CameraParameters::KEY_SUPPORTED_FLASH_MODES, "auto,on,off,torch");
 //            params.set(KEY_SUPPORTED_HFR_SIZES, "960x540,720x480");
 //            params.set(KEY_SUPPORTED_VIDEO_HIGH_FRAME_RATE_MODES, "30,off");
-        }
-    }
+        /*}*/
+ /*   }*/
 //JJEDITEND
 
+
+    if ( get_product_device() == AFYONLTE) {
+        params.set(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "640x480");
+/*        params.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES,
+                       "auto,asd,action,portrait,landscape,night,night-portrait,theatre,beach,snow,sunset,"
+                       "steadyphoto,fireworks,sports,party,candlelight,backlight,flowers,AR");*/
+        params.set(KEY_VIDEO_HFR_VALUES, "off");
+
+        if(id == BACK_CAMERA_ID){
+                                   
+            params.set(CameraParameters::KEY_SUPPORTED_FLASH_MODES, "auto,on,off,torch");
+            params.set(CameraParameters::KEY_SUPPORTED_PREVIEW_SIZES, "1280x720,720x480,640x480,320x240,176x144");
+        }
+    }
 
 #if !LOG_NDEBUG
     ALOGV("%s: fixed parameters:", __FUNCTION__);

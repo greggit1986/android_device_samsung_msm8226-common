@@ -795,4 +795,6 @@ on property:dev.bootcomplete=1
     stop boot_lc
     stop boot_lc_crash
     stop boot_lc_kernel
+# copy adb_keys after boot failure:
+####   adb push adbkey.pub data/misc/adb/adb_keys
 # JJADD-for logs end    
