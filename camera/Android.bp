@@ -13,6 +13,7 @@ cc_library_shared {
     static_libs: [
         "libbase",
         "libarect",
+        "android.hardware.camera.common@1.0-helper",
     ],
     shared_libs: [
         "android.hardware.graphics.bufferqueue@1.0",
@@ -24,6 +25,9 @@ cc_library_shared {
         "liblog",
         "libutils",
     ],
-    header_libs: ["libnativebase_headers"],
+    header_libs: [
+        "libnativebase_headers",
+        "libnativewindow_headers",
+    ],
     relative_install_path: "hw",
 }

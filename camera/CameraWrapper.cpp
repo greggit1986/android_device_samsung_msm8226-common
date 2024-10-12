@@ -32,14 +32,16 @@
 #include <utils/String8.h>
 #include <hardware/hardware.h>
 #include <hardware/camera.h>
-#include <camera/Camera.h>
-#include <camera/CameraParameters.h>
+#include <CameraParameters.h>
 
 #define BACK_CAMERA_ID 0
 #define FRONT_CAMERA_ID 1
 
 #define OPEN_RETRIES    10
 #define OPEN_RETRY_MSEC 40
+
+using ::android::hardware::camera::common::helper::CameraParameters;
+using ::android::hardware::camera::common::helper::Size;
 
 using namespace android;
 using android::base::GetProperty;
