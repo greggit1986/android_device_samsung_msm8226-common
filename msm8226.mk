@@ -191,7 +191,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Power HAL
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti
+    android.hardware.power-service-qti \
+    android.hardware.power-V3-ndk
 
 # Touch features
 #PRODUCT_PACKAGES += \
