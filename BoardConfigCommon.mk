@@ -127,6 +127,9 @@ TARGET_VNDK_USE_CORE_VARIANT := true
 # VNDK VERSION
 BOARD_VNDK_VERSION := current
 
+# Verified Boot
+BOARD_AVB_ENABLE := false
+
 # Wifi
 BOARD_WLAN_DEVICE                := qcwcn
 BOARD_HAS_QCOM_WLAN              := true
