@@ -46,15 +46,14 @@ PRODUCT_COPY_FILES += \
 
 # Audio-s3lin20
 PRODUCT_PACKAGES += \
-    android.hardware.audio@7.0-impl \
-    android.hardware.audio.effect@7.0-impl \
-    android.hardware.audio.service.msm8226 \
-    android.hardware.bluetooth.audio@2.0-impl \
-    audio.bluetooth.default \
+    android.hardware.audio.service \
+    android.hardware.audio@7.1-impl:32 \
+    android.hardware.audio.effect@7.0-impl:32 \
     audio.primary.msm8226 \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
+    libaudioroute \
     libqcomvisualizer \
     libqcompostprocbundle \
     libqcomvoiceprocessing
@@ -76,6 +75,8 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    audio.bluetooth.default \
+    android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service \
     libbt-vendor
@@ -209,9 +210,11 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 #    Snap
 
 # Ramdisk
+#PRODUCT_PACKAGES_ENG += \
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh
 
+#PRODUCT_PACKAGES_ENG += \
 PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.qcom.rc \
