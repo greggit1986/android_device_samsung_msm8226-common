@@ -80,6 +80,10 @@ TARGET_FS_CONFIG_GEN := device/samsung/msm8226-common/config.fs
 # HIDL
 DEVICE_MANIFEST_FILE := device/samsung/msm8226-common/manifest.xml
 DEVICE_MATRIX_FILE := device/samsung/msm8226-common/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    vendor/lineage/config/device_framework_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    device/samsung/msm8226-common/device_framework_matrix.xml
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
 # Kernel
