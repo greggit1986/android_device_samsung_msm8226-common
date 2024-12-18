@@ -259,23 +259,25 @@ PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcutils-v29.so
 
 # Wifi
-PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service-lazy.legacy \
-    hostapd \
-    wpa_supplicant \
-    wpa_supplicant.conf \
-    libwpa_client \
-    android.hardware.wifi.supplicant-V1-ndk \
-    android.hardware.wifi.hostapd-V1-ndk
+#PRODUCT_PACKAGES += \
+    #android.hardware.wifi-service \
+    #hostapd \
+    #wpa_supplicant \
+    #wpa_supplicant.conf \
+    #libwpa_client \
+    #android.hardware.wifi.supplicant-V1-ndk \
+    #android.hardware.wifi.hostapd-V1-ndk
+
+    #android.hardware.wifi@1.0-service-lazy.legacy \
 
 # Wifi-removedlin20
 #PRODUCT_PACKAGES += \
 #    dhcpcd.conf
 
-PRODUCT_PACKAGES += \
-    libcurl \
-    libwcnss_qmi \
-    wcnss_service
+#PRODUCT_PACKAGES += \
+#    libcurl \
+#    libwcnss_qmi \
+#    wcnss_service
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
