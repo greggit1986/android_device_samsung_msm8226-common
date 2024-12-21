@@ -198,6 +198,9 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
     android.hardware.power-V3-ndk
 
+PRODUCT_PACKAGES += \
+    android.hardware.power.stats@1.0-service.mock
+
 # Touch features
 #PRODUCT_PACKAGES += \
 #    vendor.lineage.touch@1.0-service.samsung
