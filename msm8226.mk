@@ -18,6 +18,9 @@ DEVICE_PACKAGE_OVERLAYS += \
     device/samsung/msm8226-common/overlay \
     device/samsung/msm8226-common/overlay-lineage
 
+# Partitions
+$(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
