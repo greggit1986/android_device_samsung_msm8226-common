@@ -231,6 +231,9 @@ BOARD_USES_QC_TIME_SERVICES := true
 # Verified Boot
 BOARD_AVB_ENABLE := false
 
+# Use deprecated non_ab OTA
+AB_OTA_UPDATER := false
+
 # VNDK - Dedupe VNDK libraries with identical core variants.-afyon
 #TARGET_VNDK_USE_CORE_VARIANT := true
 
