@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 The CyanogenMod Project
+ * Copyright (C) 2014 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-#pragma once
+#ifndef DEVICE_PERMS_H
+#define DEVICE_PERMS_H
 
 #define PROPERTY_PERMS_APPEND \
     { "persist.audio.",   AID_SYSTEM,   0 }, \
-    { "persist.sys.camera.", AID_MEDIA, 0 }, \
-    { "wlan.hdcp2.", AID_MEDIA, 0 },
+    { "persist.sys.camera.", AID_MEDIA, 0 },
+#endif /* DEVICE_PERMS_H */

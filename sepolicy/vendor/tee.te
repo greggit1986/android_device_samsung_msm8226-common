@@ -1,3 +1,0 @@
-allow tee system_data_root_file:dir { read open };
-allow tee system_data_file:dir { write add_name create remove_name };
-allow tee system_data_file:file { open create write unlink };

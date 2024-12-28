@@ -5,7 +5,7 @@
 //
 
 cc_library_shared {
-    name: "camera.msm8974",
+    name: "camera.msm8226",
     include_dirs: [
         "system/media/camera/include",
     ],

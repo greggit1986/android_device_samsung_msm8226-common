@@ -18,7 +18,7 @@
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH) \
                             hardware/samsung
 
-# Advanced Display
+# Advanced Display-msm8974
 PRODUCT_PACKAGES += \
     AdvancedDisplay
 
@@ -31,7 +31,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.audio@7.1-impl:32 \
     android.hardware.audio.effect@7.0-impl:32 \
-    audio.primary.msm8974 \
+    audio.primary.msm8226 \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
@@ -40,14 +40,42 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvoiceprocessing
 
+# Audio-lin21
+PRODUCT_PACKAGES += \
+android.hardware.soundtrigger@2.3-impl
+
+# Audio-afyonlin19
+#PRODUCT_PACKAGES += \
+#    android.hardware.audio@7.0-impl \
+#    android.hardware.audio.effect@7.0-impl \
+#    android.hardware.audio.effect@2.0-service \
+#    android.hardware.audio.service \
+#    audio.a2dp.default \
+#    audio.primary.msm8226 \
+#    audio.r_submix.default \
+#    audio.usb.default \
+#    libaudio-resampler \
+#    libqcomvisualizer \
+#    libqcompostprocbundle \
+#    libqcomvoiceprocessing
+
+# Audio-afyon
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
+    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
+    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
+    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration_7_0.xml \
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml
+
+# Audio-msm8974
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
-    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -58,21 +86,24 @@ PRODUCT_PACKAGES += \
     libbt-vendor
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 960
+TARGET_SCREEN_WIDTH := 540
 TARGET_BOOTANIMATION_HALF_RES := true
-
-# Configstore
-PRODUCT_PACKAGES += \
-    disable_configstore
 
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     camera.device@1.0-impl \
-    camera.msm8974 \
-    libshim_camera \
+    camera.msm8226 \
     libxml2
+
+# Configstore
+PRODUCT_PACKAGES += \
+    disable_configstore
+
+# Device uses high-density artwork where available
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Display
 PRODUCT_PACKAGES += \
@@ -82,14 +113,10 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    copybit.msm8974 \
-    gralloc.msm8974 \
-    hwcomposer.msm8974 \
-    memtrack.msm8974
-
-# Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+    copybit.msm8226 \
+    gralloc.msm8226 \
+    hwcomposer.msm8226 \
+    memtrack.msm8226
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -109,6 +136,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FlipFlap
 
+# FM
+PRODUCT_PACKAGES += \
+    FMRadio
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service.software
@@ -117,7 +148,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl.legacy \
     android.hardware.gnss@1.0-service.legacy \
-    gps.msm8974
+    gps.msm8226
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/flp.conf:system/etc/flp.conf \
@@ -133,13 +164,22 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
-# IR Blaster
-PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-service.samsung
+# Kernel
+PRODUCT_ENABLE_UFFD_GC := false
+
+# Keylayouts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/Button_Jack.kl:system/usr/keylayout/Button_Jack.kl \
+    $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
 
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1-service
+
+# Keymaster-afyon
+#PRODUCT_PACKAGES += \
+#    android.hardware.keymaster@3.0-impl \
+#    android.hardware.keymaster@3.0-service
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -162,6 +202,19 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
 
+# Media-afyon
+PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml \
+
+# Network - Do not spin up a separate process for the network stack, use an in-process APK.-msm8974
+PRODUCT_PACKAGES += \
+    InProcessNetworkStack \
+    com.android.tethering.inprocess
+
+# Offline Charger-msm8974
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
@@ -174,6 +227,20 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
+
+# OMX-addedafyonlin20
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.stagefright.ccodec=0 \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
+    debug.stagefright.omx_default_rank=0 \
+    vendor.mediacodec.binder.size=4 \
+    media.stagefright.thumbnail.prefer_hw_codecs=true
+
+PRODUCT_COPY_FILES += \
+    system/core/libprocessgroup/profiles/cgroups_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    system/core/libprocessgroup/profiles/task_profiles_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -210,10 +277,21 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
 
+# Permissions-afyon
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
+    frameworks/native/data/etc/android.hardware.camera.autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.autofocus.xml \
+    frameworks/native/data/etc/android.hardware.camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.xml \
+    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.compass.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.compass.xml \
+    frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
+
 # Power HAL
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
     android.hardware.power.stats@1.0-service.mock
+#    android.hardware.power-V3-ndk - arealdy in vendor/qcom/opensource/power/android.mk
 
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
@@ -231,6 +309,19 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     ueventd.qcom.rc
 
+# Ramdisk-afyon
+#PRODUCT_PACKAGES += \
+#    init.qcom.bt.sh
+
+#PRODUCT_PACKAGES += \
+#    fstab.qcom \
+#    init.target.rc
+#    init.qcom.power.rc \
+#    init.qcom.rc \
+#    init.qcom.usb.rc \
+#    init.recovery.qcom.rc \
+#    ueventd.qcom.rc
+
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
@@ -238,14 +329,19 @@ PRODUCT_PACKAGES += \
 # Reduce
 PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
 
+# Reduce-afyon
+#PRODUCT_DEXPREOPT_SPEED_APPS += \
+#    Settings \
+#    TrebuchetQuickStep
+
 # Seccomp
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl.samsung8974 \
-    android.hardware.sensors@1.0-service.samsung8974
+    android.hardware.sensors@1.0-impl.samsung8226 \
+    android.hardware.sensors@1.0-service.samsung8226
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
@@ -263,7 +359,7 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-service
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine-8974.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8974.conf
+    $(LOCAL_PATH)/configs/thermal-engine-8226.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8226.conf
 
 # TimeKeep
 PRODUCT_PACKAGES += \
@@ -271,8 +367,8 @@ PRODUCT_PACKAGES += \
     TimeKeep
 
 # Touch features
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.samsung
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.touch@1.0-service.samsung
 
 # USB
 PRODUCT_PACKAGES += \
@@ -287,20 +383,39 @@ PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so \
     prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcutils-v29.so
 
+# VNDK-afyon-already defined
+#PRODUCT_COPY_FILES += \
+#    prebuilts/vndk/v30/arm/arch-arm-armv7-a-neon/shared/vndk-core/android.hardware.light-V1-ndk_platform.so:$(TARGET_COPY_OUT_VENDOR)/lib/android.hardware.light-V1-ndk_platform.so
+
 # Wifi
-PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service.legacy \
-    hostapd \
-    macloader \
-    TetheringConfigOverlay \
-    wificond \
-    WifiOverlay \
-    wpa_supplicant \
-    wpa_supplicant.conf
+#PRODUCT_PACKAGES += \
+    #android.hardware.wifi-service \
+    #hostapd \
+    #wpa_supplicant \
+    #wpa_supplicant.conf \
+    #libwpa_client \
+    #android.hardware.wifi.supplicant-V1-ndk \
+    #android.hardware.wifi.hostapd-V1-ndk
+
+    #android.hardware.wifi@1.0-service-lazy.legacy \ - msm8974
+
+# Wifi-removedlin20
+#PRODUCT_PACKAGES += \
+#    dhcpcd.conf
+
+#PRODUCT_PACKAGES += \
+#    libcurl \
+#    libwcnss_qmi \
+#    wcnss_service
 
 PRODUCT_COPY_FILES += \
-   $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
-   $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/hostapd_default.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/hostapd/hostapd_default.conf \
+    $(LOCAL_PATH)/prima/WCNSS_cfg.dat:$(TARGET_COPY_OUT_SYSTEM)/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/prima/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_SYSTEM)/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/prima/WCNSS_qcom_wlan_nv.bin:$(TARGET_COPY_OUT_SYSTEM)/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/samsung/msm8974-common/msm8974-common-vendor.mk)
+$(call inherit-product, vendor/samsung/afyonlte-common/afyonlte-common-vendor.mk)
+$(call inherit-product, vendor/samsung/msm8226-common/msm8226-common-vendor.mk)

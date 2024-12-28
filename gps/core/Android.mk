@@ -3,7 +3,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := libloc_core
-LOCAL_VENDOR_MODULE := true
+LOCAL_PROPRIETARY_MODULE := true
 
 LOCAL_MODULE_TAGS := optional
 
@@ -13,7 +13,7 @@ LOCAL_SHARED_LIBRARIES := \
     libcutils \
     libgps.utils \
     libdl \
-    libprocessgroup
+    libhardware
 
 LOCAL_SRC_FILES += \
     LocApiBase.cpp \
@@ -23,15 +23,9 @@ LOCAL_SRC_FILES += \
     loc_core_log.cpp
 
 LOCAL_CFLAGS += \
-    -fno-short-enums \
-    -D_ANDROID_ \
-    -Wno-format \
-    -Wno-null-conversion \
-    -Wno-overloaded-virtual \
-    -Wno-reorder \
-    -Wno-unneeded-internal-declaration \
-    -Wno-unused-parameter \
-    -Wno-unused-variable
+     -fno-short-enums \
+     -D_ANDROID_ \
+     -Wno-unused-parameter
 
 LOCAL_C_INCLUDES:= \
     $(TARGET_OUT_HEADERS)/gps.utils \

@@ -1,1 +1,0 @@
-allow radio rild:unix_stream_socket connectto;

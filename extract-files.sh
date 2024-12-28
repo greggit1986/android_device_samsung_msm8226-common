@@ -50,6 +50,6 @@ for BLOB_LIST in "${MY_DIR}"/common-proprietary-files*.txt; do
     extract "${BLOB_LIST}" "${SRC}"
 done
 
-export BOARD_COMMON=msm8974-common
+export BOARD_COMMON=msm8226-common
 
 "./../../${VENDOR}/${BOARD_COMMON}/extract-files.sh" "$@"

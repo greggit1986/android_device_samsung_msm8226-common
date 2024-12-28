@@ -22,7 +22,8 @@
     <bool translatable="false" name="config_wifi5ghzSupport">true</bool>
 
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
-    <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
+    <bool translatable="false" name="config_wifi_background_scan_support">false</bool>
+    <!--msm8974 bool translatable="false" name="config_wifi_background_scan_support">true</bool-->
 
     <!-- Boolean indicating whether or not wifi should turn off when emergency call is made -->
     <bool translatable="false" name="config_wifi_turn_off_during_emergency_call">true</bool>
@@ -38,6 +39,6 @@
     <bool translatable="false" name="config_wifiSaeUpgradeEnabled">false</bool>
 
     <!-- Default access point SSID used for tethering -->
-    <string name="wifi_tether_configure_ssid_default" translatable="false">Samsung Galaxy8974</string>
+    <string name="wifi_tether_configure_ssid_default" translatable="false">Galaxy core LTE</string>
 
 </resources>

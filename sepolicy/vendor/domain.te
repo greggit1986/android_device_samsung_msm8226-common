@@ -1,1 +1,0 @@
-allow domain same_process_hal_file:file { execmod execute getattr map open read };

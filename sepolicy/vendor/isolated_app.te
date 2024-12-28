@@ -1,5 +1,1 @@
-get_prop(isolated_app, vendor_default_prop)
-get_prop(isolated_app, userdebug_or_eng_prop)
-
-dontaudit isolated_app app_data_file:file setattr;
 allow isolated_app content_capture_service:service_manager find;

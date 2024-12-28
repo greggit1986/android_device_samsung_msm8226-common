@@ -134,7 +134,7 @@
     <bool name="config_unplugTurnsOnScreen">true</bool>
 
     <!-- Indicate whether the SD card is accessible without removing the battery. -->
-    <bool name="config_batterySdCardAccessibility">true</bool>
+    <bool name="config_batterySdCardAccessibility">false</bool>
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
@@ -164,19 +164,32 @@
         <item>evdo:4094,87380,1048576,4096,16384,262144</item>
         <item>ehrpd:4094,87380,1048576,4096,16384,262144</item>
     </string-array>
-
     <!-- Override the default detection behavior for the framework method
          android.view.ViewConfiguration#hasPermanentMenuKey().
          Valid settings are:
          0 - No change. Use the default autodetection behavior.
          1 - The device DOES have a permanent menu key; ignore autodetection.
          2 - The device DOES NOT have a permanent menu key; ignore autodetection. -->
-    <integer name="config_overrideHasPermanentMenuKey">2</integer>
+    <integer name="config_overrideHasPermanentMenuKey">1</integer>
 
-    
+    <!-- Afyon-Controls the navigation bar interaction mode:
+         0: 3 button mode (back, home, overview buttons)
+         1: 2 button mode (back, home buttons + swipe up for overview)
+         2: gestures only for back, home and overview -->
+    <integer name="config_navBarInteractionMode">2</integer>
 
     <!-- Disable rounded corners on windows to improve graphics performance -->
     <bool name="config_supportsRoundedCornersOnWindows">false</bool>
+
+    <!-- Device configuration indicating whether we should avoid using accelerated graphics
+         in certain places to reduce RAM footprint.  This is ignored if ro.config.low_ram
+         is true (in that case this is assumed true as well).  It can allow you to tune down
+         your device's memory use without going to the point of causing applications to turn
+         off features. Afyon -->
+    <bool name="config_avoidGfxAccel">true</bool>
+
+    <!-- Feature flag to store TaskSnapshot in 16 bit pixel format to save memory. Afyon-->
+    <bool name="config_use16BitTaskSnapshotPixelFormat">true</bool>
 
     <!-- AOSP WFD -->
     <bool name="config_enableWifiDisplay">true</bool>
@@ -199,9 +212,8 @@
     
     <!-- Flag indicating whether the surface flinger has limited
          alpha compositing functionality in hardware.  If set, the window
-         manager will disable alpha trasformation in animations where not
+         manager will disable alpha transformation in animations where not
          strictly needed. -->
     <bool name="config_sf_limitedAlpha">true</bool>
-    
     
 </resources>

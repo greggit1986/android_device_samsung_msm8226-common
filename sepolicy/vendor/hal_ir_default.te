@@ -1,2 +1,0 @@
-allow hal_ir_default sysfs:dir search;
-allow hal_ir_default sysfs:file w_file_perms;

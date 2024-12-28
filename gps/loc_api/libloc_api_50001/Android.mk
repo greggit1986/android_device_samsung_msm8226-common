@@ -3,7 +3,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := libloc_eng
-LOCAL_VENDOR_MODULE := true
+LOCAL_PROPRIETARY_MODULE := true
 
 LOCAL_MODULE_TAGS := optional
 
@@ -14,7 +14,8 @@ LOCAL_SHARED_LIBRARIES := \
     liblog \
     libloc_core \
     libgps.utils \
-    libprocessgroup
+    libprocessgroup \
+    libhardware
 
 LOCAL_SRC_FILES += \
     loc_eng.cpp \
@@ -33,16 +34,9 @@ LOCAL_SRC_FILES += \
     loc_eng_dmn_conn_glue_pipe.c
 
 LOCAL_CFLAGS += \
-    -fno-short-enums \
-    -D_ANDROID_ \
-    -Wno-format \
-    -Wno-mismatched-tags \
-    -Wno-null-conversion \
-    -Wno-reorder \
-    -Wno-sign-compare \
-    -Wno-unused-function \
-    -Wno-unused-parameter \
-    -Wno-unused-variable
+     -fno-short-enums \
+     -D_ANDROID_ \
+     -Wno-unused-parameter
 
 LOCAL_C_INCLUDES:= \
     $(TARGET_OUT_HEADERS)/gps.utils \
@@ -63,7 +57,7 @@ include $(BUILD_HEADER_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := gps.$(TARGET_BOARD_PLATFORM)
-LOCAL_VENDOR_MODULE := true
+LOCAL_PROPRIETARY_MODULE := true
 
 LOCAL_MODULE_TAGS := optional
 
@@ -76,7 +70,8 @@ LOCAL_SHARED_LIBRARIES := \
     libloc_core \
     libgps.utils \
     libdl \
-    libprocessgroup
+    libprocessgroup \
+    libhardware
 
 LOCAL_SRC_FILES += \
     loc.cpp \
@@ -84,10 +79,8 @@ LOCAL_SRC_FILES += \
 
 LOCAL_CFLAGS += \
     -fno-short-enums \
-    -D_ANDROID_ \
-    -Wno-format \
-    -Wno-mismatched-tags \
-    -Wno-unused-parameter
+     -D_ANDROID_ \
+     -Wno-unused-parameter
 
 ## Includes
 LOCAL_C_INCLUDES:= \

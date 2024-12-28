@@ -1,4 +1,2 @@
-get_prop(hal_gnss_default, default_prop)
-get_prop(hal_gnss_default, system_prop)
-allow hal_gnss_default system_file:file { getattr open read };
-allow hal_gnss_default ssr_device:chr_file { open read };
+allow hal_gnss_default default_prop:file { getattr open read };
+allow hal_gnss_default system_prop:file { getattr open read };

@@ -15,7 +15,7 @@
 #
 
 # NFC
-include $(COMMON_PATH)/nfc/board.mk
+include device/samsung/afyonlte-common/nfc/board.mk
 
 # PN547 specific flags
 BOARD_NFC_CHIPSET := pn547

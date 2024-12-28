@@ -32,7 +32,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "klte klteactivexx klteaio kltechn kltechnduo klteduos kltedv kltekdi kltekor"
+write_headers "afyonltecan afyonltetmo afyonlteMetroPCS"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/common-proprietary-files.txt" true
@@ -47,6 +47,6 @@ write_makefile_header "$PRODUCTMK"
 parse_file_list "${MY_DIR}/common-proprietary-files-ril-m.txt"
 write_product_copy_files true
 
-export BOARD_COMMON=msm8974-common
+export BOARD_COMMON=msm8226-common
 
 "./../../${VENDOR}/${BOARD_COMMON}/setup-makefiles.sh" "$@"

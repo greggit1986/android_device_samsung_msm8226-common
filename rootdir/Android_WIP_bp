@@ -1,0 +1,108 @@
+//
+// Copyright (C) 2022 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+
+// Init
+prebuilt_etc {
+    name: "init.qcom.rc",
+    src: "etc/init.qcom.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.usb.rc",
+    src: "etc/init.qcom.usb.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.qcom.usb.rc
+LOCAL_MODULE_TAGS  := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := etc/init.qcom.usb.rc
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
+include $(BUILD_PREBUILT)
+
+
+// Copy the power config for recovery too
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.recovery.qcom.rc
+LOCAL_MODULE_TAGS  := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := etc/init.qcom.power.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+prebuilt_etc {
+    name: "init.recovery.qcom.rc",
+    src: "etc/init.qcom.power.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := ueventd.qcom.rc
+LOCAL_MODULE_STEM  := ueventd.rc
+LOCAL_MODULE_TAGS  := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := etc/ueventd.qcom.rc
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR)/etc
+include $(BUILD_PREBUILT)
+
+prebuilt_etc {
+    name: "ueventd.qcom.rc",
+    filename: "ueventd.rc",
+    src: "etc/ueventd.qcom.rc",
+    vendor: true,
+}
+
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.qcom.power.rc
+LOCAL_MODULE_TAGS  := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := etc/init.qcom.power.rc
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
+include $(BUILD_PREBUILT)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+prebuilt_etc {
+    name: "fstab.qcom",
+    src: "etc/fstab.qcom",
+    vendor: true,
+    vendor_ramdisk_available: true,
+}
+
+
+
+
+
+
+
+
+
+
+# Configuration scripts
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.qcom.bt.sh
+LOCAL_MODULE_TAGS  := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := etc/scripts/init.qcom.bt.sh
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_EXECUTABLES)
+include $(BUILD_PREBUILT)
