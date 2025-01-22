@@ -393,13 +393,12 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
 
 # VNDK
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so \
-    prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcutils-v29.so
-
-# VNDK-afyon-already defined
-#PRODUCT_COPY_FILES += \
-#    prebuilts/vndk/v30/arm/arch-arm-armv7-a-neon/shared/vndk-core/android.hardware.light-V1-ndk_platform.so:$(TARGET_COPY_OUT_VENDOR)/lib/android.hardware.light-V1-ndk_platform.so
+PRODUCT_PACKAGES += \
+    libcrypto-v33 \
+    libutils-v33 \
+    libhidlbase-v32 \
+    libprotobuf-cpp-lite-v29 \
+    libcutils-v29
 
 # Wifi
 PRODUCT_PACKAGES += \
