@@ -59,8 +59,8 @@ ro.bluetooth.a2dp_offload.supported=false
 ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
 #bluetooth.sco.disable_enhanced_connection=1 #msm8974
 
-# BPF
-ro.kernel.ebpf.supported=false
+# Bpf
+bpf.progs_loaded=1
 
 # Camera
 camera2.portability.force_api=1
