@@ -105,6 +105,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service
 
+# CPUSETS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/cpuset.sh:$(TARGET_COPY_OUT_VENDOR)/bin/hw/cpuset.sh \
+    $(LOCAL_PATH)/configs/cpuset.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/cpuset.sh
+
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
