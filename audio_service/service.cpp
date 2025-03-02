@@ -96,10 +96,10 @@ int main(int /* argc */, char* /* argv */ []) {
             "android.hardware.bluetooth.audio@2.0::IBluetoothAudioProvidersFactory",
         },
         // remove the old HIDL when Bluetooth Audio Hal V2 has offloading supported
-       // {
-       //     "Bluetooth Audio Offload API",
-       //     "android.hardware.bluetooth.a2dp@1.0::IBluetoothAudioOffload"
-       // }
+        {
+            "Bluetooth Audio Offload API",
+            "android.hardware.bluetooth.a2dp@1.0::IBluetoothAudioOffload"
+        }
     };
     // clang-format on
 
