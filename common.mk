@@ -98,8 +98,12 @@ PRODUCT_PACKAGES += \
     libxml2
 
 # Configstore
+#PRODUCT_PACKAGES += \
+#    disable_configstore
+
+# Configstore
 PRODUCT_PACKAGES += \
-    disable_configstore
+    android.hardware.configstore@1.1-service
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
