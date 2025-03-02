@@ -1,4 +1,4 @@
-<manifest version="1.0" type="device" target-level="5">
+<manifest version="1.0" type="device" target-level="4">
     <hal format="hidl">
         <name>android.hardware.bluetooth</name>
         <transport>hwbinder</transport>
@@ -55,7 +55,8 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.composer</name>
-        <transport>hwbinder</transport>
+        <transport arch="32">passthrough</transport>
+        <impl level="generic"></impl>
         <version>2.1</version>
         <interface>
             <name>IComposer</name>
@@ -152,7 +153,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <!--hal format="hidl">
+    <hal format="hidl">
         <name>android.hardware.keymaster</name>
         <transport>hwbinder</transport>
         <version>3.0</version>
@@ -160,5 +161,5 @@
             <name>IKeymasterDevice</name>
             <instance>default</instance>
         </interface>
-    </hal-->
+    </hal>
 </manifest>
