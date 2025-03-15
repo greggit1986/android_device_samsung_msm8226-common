@@ -401,12 +401,6 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi.supplicant-V1-ndk \
     android.hardware.wifi.hostapd-V1-ndk
 
-    #android.hardware.wifi@1.0-service-lazy.legacy \ - msm8974
-
-# Wifi-removedlin20
-#PRODUCT_PACKAGES += \
-#    dhcpcd.conf
-
 PRODUCT_PACKAGES += \
     libcurl \
     libwcnss_qmi \
