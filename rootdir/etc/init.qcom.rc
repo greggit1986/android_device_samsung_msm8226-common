@@ -293,6 +293,12 @@ on post-fs-data
     mkdir /data/shared 0755
     chown system system /data/shared
 
+    #####- stolen from https://github.com/UDPSendToFailed/android_device_samsung_gta2xlwifi/blob/lineage-21.0/rootdir/init.qcom.rc#L464 ######
+    #Create directories for wifihal services 
+    mkdir /dev/socket/wifihal 0770 wifi wifi
+    chmod 2770 /dev/socket/wifihal
+    #####
+
     # Create directory for FOTA
     mkdir /data/fota 0771
     chown system system /data/fota
@@ -997,7 +1003,6 @@ on property:persist.sys.ssr.restart_level=1
 
 on property:persist.sys.ssr.restart_level=3
     write /sys/module/subsystem_restart/parameters/restart_level 3 
-
 
 # From init.qcom.power.rc
 on property:sys.boot_completed=1
