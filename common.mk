@@ -91,11 +91,36 @@ TARGET_SCREEN_WIDTH := 540
 TARGET_BOOTANIMATION_HALF_RES := true
 
 # Camera
+#PRODUCT_PACKAGES += \
+#    android.hardware.camera.provider@2.4-impl \
+#    camera.device@1.0-impl \
+#    camera.msm8226 \
+#    libxml2
+
+################################################################
+# Experimental - https://github.com/acroreiser/android_device_lenovo_a6010/blob/lineage-21.0/device.mk
+
+# Camera
+#PRODUCT_PACKAGES += \
+#    android.hardware.camera.provider@2.5-service \
+
+# Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     camera.device@1.0-impl \
     camera.msm8226 \
-    libxml2
+    libxml2 \
+    Aperture
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.hal3on1.use_limited_level=1 \
+    persist.camera.hal3on1.use_memfd=1
+
+    #persist.camera.cpp.duplication=false \
+    #persist.camera.hal.debug.mask=0 \
+    #persist.camera.feature.cac=1 \
+    #persist.camera.no-display=1 \
+################################################################
 
 # Configstore
 #PRODUCT_PACKAGES += \
