@@ -108,14 +108,14 @@ TARGET_BOOTANIMATION_HALF_RES := true
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     camera.device@1.0-impl \
+    camera.legacy.msm8226 \
     camera.msm8226 \
     libxml2 \
     Aperture
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.hal3on1.use_limited_level=1 \
-    persist.camera.hal3on1.use_memfd=1
-
+#PRODUCT_PROPERTY_OVERRIDES += \
+    #persist.camera.hal3on1.use_limited_level=1 \
+    #persist.camera.hal3on1.use_memfd=1
     #persist.camera.cpp.duplication=false \
     #persist.camera.hal.debug.mask=0 \
     #persist.camera.feature.cac=1 \
