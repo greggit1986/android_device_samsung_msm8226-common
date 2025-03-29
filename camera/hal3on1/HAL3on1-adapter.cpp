@@ -24,7 +24,7 @@
 #include <cutils/properties.h>
 #include <ui/Fence.h>
 #include <ui/GraphicBufferMapper.h>
-#include "../../hardware/display/libgralloc/gralloc_priv.h"
+#include "../../hardware/qcom-caf/msm8974/display/libgralloc/gralloc_priv.h"
 #include <utils/Mutex.h>
 #include <linux/errno.h>
 #include <ctime>
