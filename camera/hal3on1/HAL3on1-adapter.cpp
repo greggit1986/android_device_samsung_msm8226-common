@@ -98,7 +98,7 @@ adapter_config_t properties = {
 };
 
 // Put your sysfs path here or use HAL1 torch mode
-#define SYSFS_FLASH_PATH_BRIGHTNESS "/sys/class/leds/torch-light0/brightness"
+#define SYSFS_FLASH_PATH_BRIGHTNESS "/sys/class/leds/led:flash_torch/brightness"
 #define SYSFS_FLASH_PATH_BRIGHTNESS_FALLBACK "/sys/class/leds/torch-light/brightness"
 
 static CameraMetadata static_metadata[2];
