@@ -339,11 +339,8 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.rc \
     init.qcom.usb.rc \
-    ueventd.qcom.rc
-
-# Ramdisk-afyon
-#PRODUCT_PACKAGES += \
-#    init.qcom.bt.sh
+    ueventd.qcom.rc \
+    init.qcom.bt.sh
 
 #PRODUCT_PACKAGES += \
 #    fstab.qcom \
