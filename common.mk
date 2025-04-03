@@ -111,7 +111,7 @@ PRODUCT_PACKAGES += \
     camera.legacy.msm8226 \
     camera.msm8226 \
     libxml2 \
-    Aperture
+    GrapheneCamera
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.cpp.duplication=false \
