@@ -71,6 +71,10 @@ TARGET_USES_NON_TREBLE_CAMERA := true
 # Camera-msm8974
 MALLOC_SVELTE_FOR_LIBC32 := true
 
+# Camera-Hal3On1
+TARGET_SYSFS_FLASH_PATH_BRIGHTNESS := /sys/class/leds/led:flash_torch/brightness
+TARGET_SYSFS_FLASH_PATH_BRIGHTNESS_FALLBACK := /sys/class/leds/torch-light/brightness
+
 # Dexpreopt-afyon
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
