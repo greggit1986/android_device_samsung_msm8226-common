@@ -42,6 +42,8 @@ extern "C" {
 
 #define INVALID_HEX_CHAR 16
 
+#define MAX_BROADCAST_SMS_CONFIG_INFO 25
+
 using namespace android::hardware::radio;
 using namespace android::hardware::radio::V1_0;
 using namespace android::hardware::radio::deprecated::V1_0;
