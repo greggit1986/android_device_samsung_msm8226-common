@@ -11,6 +11,7 @@ LOCAL_STATIC_LIBRARIES := libbase libarect
 LOCAL_SHARED_LIBRARIES := \
     libhardware libnativewindow libgui liblog libcamera_client libutils libcutils libdl libhidlbase libsensor \
     android.hidl.token@1.0-utils \
+    libboringssl-compat \
     android.hardware.graphics.bufferqueue@1.0
 
 LOCAL_HEADER_LIBRARIES := libnativebase_headers
