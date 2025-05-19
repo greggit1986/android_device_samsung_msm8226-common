@@ -1,2 +1,6 @@
 allow platform_app radio_data_file:dir getattr;
 allow platform_app system_app_data_file:dir getattr;
+
+# https://github.com/LineageOS/android_system_sepolicy/commit/a12aad45b68da1d3da096659a2b22b5e95c1f6b9 
+# com.android.systemui
+allow platform_app rootfs:dir getattr;
