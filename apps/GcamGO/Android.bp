@@ -1,0 +1,16 @@
+android_app_import {
+    name: "GcamGo_SHAMIM",
+
+    apk: "GCAMGO-3.3.439_SHAMIM_V1.apk",
+    certificate: "platform",
+
+    overrides: [
+        "Snap",
+        "Camera2",
+    ],
+    dex_preopt: {
+        enabled: true,
+    },
+    product_specific: true,
+    //optional_uses_libs: ["androidx.camera.extensions.impl"],
+}
