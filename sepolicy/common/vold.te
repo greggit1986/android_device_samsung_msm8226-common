@@ -13,4 +13,8 @@ allowxperm vold vold_device:blk_file ioctl BLKROGET;
 
 allow vold sysfs_mmc_host:file w_file_perms;
 
+allow vold persist_data_file:dir { ioctl open read };
+allow vold rootfs:dir { add_name create write setattr};
+
+
 dontaudit vold hal_bootctl_hwservice:hwservice_manager find;

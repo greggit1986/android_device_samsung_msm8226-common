@@ -21,6 +21,11 @@ allow vendor_init wifi_data_file:file create_file_perms;
 
 allow vendor_init cpuset_device:file create_file_perms;
 
+allow vendor_init cache_file:dir { remove_name search write };
+allow vendor_init cache_file:file unlink;
+
+allow vendor_init unlabeled:dir search;
+
 # This causes a mobile data slowdown after several hours of 
 # usage on enforcing builds, for certain reasons.
 dontaudit vendor_init wcnss_device:chr_file { open write };

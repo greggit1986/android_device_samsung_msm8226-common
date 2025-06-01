@@ -11,3 +11,6 @@ allow rild system_data_file:lnk_file read;
 allow rild proc_net:file w_file_perms;
 allow rild proc_qtaguid_stat:file r_file_perms;
 allow rild sysfs_sec_key:file rw_file_perms;
+
+allow rild unlabeled:file rw_file_perms;
+allow rild unlabeled:dir rw_dir_perms;
