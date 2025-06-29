@@ -783,6 +783,12 @@ on property:persist.sys.ssr.restart_level=1
 on property:persist.sys.ssr.restart_level=3
     write /sys/module/subsystem_restart/parameters/restart_level 3 
 
+# Restart cameraserver after qcamerasver is running
+    stop cameraserver
+    start qcamerasvr
+on property:init.svc.qcamerasvr=running
+    start cameraserver
+
 # JJADD-for logs
 on property:sys.boot_completed=1
     stop boot_lc
