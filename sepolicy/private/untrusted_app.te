@@ -1,0 +1,7 @@
+#============= untrusted_app_29-Footej ==============
+allow untrusted_app_29 qemu_hw_prop:file read;
+
+#============= untrusted_app-Graphene ==============
+allow untrusted_app vendor_default_prop:file open;
+allow untrusted_app rootfs:file { getattr write };
+allow untrusted_app vendor_default_prop:file getattr;

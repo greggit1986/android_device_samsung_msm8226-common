@@ -10,6 +10,7 @@ allow bluetooth_loader bluetooth_efs_file:dir search;
 allow bluetooth_loader bluetooth_efs_file:file r_file_perms;
 allow bluetooth_loader efs_file:dir search;
 allow bluetooth_loader bluetooth_efs_file:file getattr;
+allow bluetooth_loader default_prop:file { getattr open read };
 
 allow bluetooth {
     bt_fw_file

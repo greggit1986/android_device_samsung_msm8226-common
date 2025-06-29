@@ -11,3 +11,10 @@ allow rild system_data_file:lnk_file read;
 allow rild proc_net:file w_file_perms;
 allow rild proc_qtaguid_stat:file r_file_perms;
 allow rild sysfs_sec_key:file rw_file_perms;
+
+allow rild config_prop:file { getattr open read };
+allow rild default_prop:file { getattr open read };
+allow rild radio_core_data_file:dir { add_name getattr write };
+allow rild radio_core_data_file:file { create open read setattr write };
+allow rild system_prop:file { getattr open read };
+allow rild vendor_rild_libpath_prop:file { getattr open read };

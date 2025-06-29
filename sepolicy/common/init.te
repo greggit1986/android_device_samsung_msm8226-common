@@ -15,3 +15,7 @@ allow init {
     proc_last_kmsg
 }:file setattr;
 
+allow init hal_power_stats_hwservice:hwservice_manager { add find };
+allow init hidl_base_hwservice:hwservice_manager add;
+allow init hwservicemanager:binder { call transfer };
+allow init vendor_file:file execute_no_trans;
