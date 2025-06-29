@@ -59,21 +59,6 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvoiceprocessing
 
-# Audio-afyonlin19
-#PRODUCT_PACKAGES += \
-#    android.hardware.audio@7.0-impl \
-#    android.hardware.audio.effect@7.0-impl \
-#    android.hardware.audio.effect@2.0-service \
-#    android.hardware.audio.service \
-#    audio.a2dp.default \
-#    audio.primary.msm8226 \
-#    audio.r_submix.default \
-#    audio.usb.default \
-#    libaudio-resampler \
-#    libqcomvisualizer \
-#    libqcompostprocbundle \
-#    libqcomvoiceprocessing
-
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
@@ -102,10 +87,6 @@ PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
     camera.msm8226 \
     libxml2
-
-# Camera-removed lin20
-#PRODUCT_PACKAGES += \
-#    Snap
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -234,10 +215,6 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
-
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/samsung
 
@@ -264,10 +241,6 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     android.hardware.wifi.supplicant-V1-ndk \
     android.hardware.wifi.hostapd-V1-ndk
-
-# Wifi-removedlin20
-#PRODUCT_PACKAGES += \
-#    dhcpcd.conf
 
 PRODUCT_PACKAGES += \
     libcurl \
