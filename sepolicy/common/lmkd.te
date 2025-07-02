@@ -1,0 +1,1 @@
+allow lmkd cpuset_device:dir search;

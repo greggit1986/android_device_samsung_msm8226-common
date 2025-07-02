@@ -1,0 +1,3 @@
+allow shell kernel:system syslog_read;
+allow shell radio_prop:property_service set;
+allow shell telephony_status_prop:property_service set;
