@@ -132,8 +132,6 @@ LZMA_RAMDISK_TARGETS := recovery
 TARGET_KERNEL_ADDITIONAL_FLAGS := HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8226
 
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-
 # Legacy memfd
 TARGET_HAS_MEMFD_BACKPORT := true
 
