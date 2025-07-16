@@ -211,6 +211,10 @@ ro.lineage.build.vendor_security_patch=2017-08-01
 # 1:ERROR 2:HIGH 4:LOW 0:NOLOGS 7:AllLOGS
 # vidc.debug.level=1
 
+# Volume
+ro.config.vc_call_vol_steps=15
+ro.config.media_vol_steps=30
+
 # WiFi
 ro.disableWifiApFirmwareReload=true
 wifi.interface=wlan0
