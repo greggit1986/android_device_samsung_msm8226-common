@@ -403,7 +403,7 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service-lazy.legacy \
+    android.hardware.wifi-service-lazy \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf \
