@@ -1,0 +1,2 @@
+
+allow sdcardd vendor_file:file { getattr read };

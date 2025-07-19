@@ -1,0 +1,2 @@
+
+allow apexd vendor_file:file { read getattr };

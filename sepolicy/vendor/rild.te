@@ -19,3 +19,10 @@ allow rild system_prop:file { getattr open read };
 allow rild vendor_rild_libpath_prop:file read;
 allow rild vendor_rild_libpath_prop:file open;
 allow rild vendor_rild_libpath_prop:file getattr;
+
+allow rild radio_data_file:lnk_file getattr;
+allow rild radio_core_data_file:dir { add_name getattr write search remove_name };
+allow rild radio_core_data_file:file { create open read setattr write unlink };
+allow rild radio_core_data_file:lnk_file read;
+dontaudit rild system_data_file:dir getattr;
+allow rild system_userdir_file:dir { getattr search };

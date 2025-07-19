@@ -1,0 +1,2 @@
+
+allow prng_seeder vendor_file:file { getattr read };

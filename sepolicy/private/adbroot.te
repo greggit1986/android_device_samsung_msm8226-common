@@ -1,0 +1,2 @@
+
+allow adbroot vendor_file:file { getattr read };

@@ -1,2 +1,5 @@
 allow fsck cache_block_device:blk_file rw_file_perms;
 allow fsck efs_block_device:blk_file rw_file_perms;
+
+allow fsck vendor_file:file { read getattr };
+allow fsck fsck:capability { dac_override };

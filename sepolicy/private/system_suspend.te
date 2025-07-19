@@ -1,0 +1,3 @@
+
+allow system_suspend vendor_file:file { getattr read };
+

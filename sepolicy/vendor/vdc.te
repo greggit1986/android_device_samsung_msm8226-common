@@ -1,0 +1,2 @@
+
+allow vdc vendor_file:file { read getattr };

@@ -1,0 +1,6 @@
+
+allow artd radio_data_file:lnk_file read;
+allow artd vendor_file:file { getattr read };
+allow artd radio_core_data_file:lnk_file read;
+allow artd same_process_hal_file:file read;
+allow artd system_app_data_file:lnk_file read;

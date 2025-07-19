@@ -1,2 +1,7 @@
+
 allow mediaprovider_app media_rw_data_file:lnk_file setattr;
 allow mediaprovider_app sdcardfs:lnk_file getattr;
+allow mediaprovider_app vendor_file:file getattr;
+allow mediaprovider_app rootfs:dir { add_name create read write };
+allow mediaprovider_app rootfs:dir {open setattr};
+allow mediaprovider_app rootfs:file getattr;

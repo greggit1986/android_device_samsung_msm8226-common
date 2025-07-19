@@ -1,0 +1,2 @@
+
+allow derive_classpath vendor_file:file { getattr read };

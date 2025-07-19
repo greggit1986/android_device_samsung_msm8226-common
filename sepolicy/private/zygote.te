@@ -1,0 +1,3 @@
+
+allow zygote device:dir { add_name create open read setattr write };
+allow zygote device:file { create open write };

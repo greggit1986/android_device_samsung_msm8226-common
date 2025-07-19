@@ -1,0 +1,3 @@
+
+allow misctrl proc:file { getattr open read };
+allow misctrl vendor_file:file { getattr read };

@@ -2,3 +2,5 @@ get_prop(zygote, exported_camera_prop);
 
 dontaudit zygote bluetooth_prop:file r_file_perms;
 dontaudit zygote proc_cmdline:file r_file_perms;
+
+allow zygote vendor_file:file { read getattr open execute };

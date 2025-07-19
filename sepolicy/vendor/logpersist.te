@@ -1,0 +1,7 @@
+
+allow logpersist self:capability { dac_override dac_read_search };
+allow logpersist cache_file:dir { read search };
+
+allow logpersist vendor_file:file { read getattr };
+
+allow logd vendor_file:file { read getattr };

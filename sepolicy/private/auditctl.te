@@ -1,0 +1,2 @@
+
+allow auditctl vendor_file:file { getattr read };

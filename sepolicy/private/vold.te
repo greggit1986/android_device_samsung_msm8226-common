@@ -1,0 +1,3 @@
+
+allow vold rootfs:dir setattr;
+allow vold rootfs:dir { add_name create write };

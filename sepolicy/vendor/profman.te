@@ -1,0 +1,2 @@
+
+allow profman vendor_file:file { getattr read };

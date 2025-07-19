@@ -1,0 +1,11 @@
+
+allow cameraserver camera_socket:sock_file { write };
+allow cameraserver video_device:chr_file { read write open ioctl };
+allow cameraserver vendor_file:file { open execute read getattr execmod };
+allow cameraserver vendor_default_prop:file { open read getattr };
+allow cameraserver system_data_root_file:sock_file { write ioctl };
+allow cameraserver sysfs_camera:dir search;
+allow cameraserver sysfs_camera:file { open read };
+allow cameraserver sysfs_leds:dir search;
+allow cameraserver sysfs_leds:file { open read write };
+allow cameraserver sysfs_leds:lnk_file read;

@@ -1,0 +1,2 @@
+
+allow priv_app rootfs:dir { add_name create write };

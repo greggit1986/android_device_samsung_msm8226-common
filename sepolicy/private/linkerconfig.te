@@ -1,0 +1,3 @@
+
+allow linkerconfig vendor_file:file { getattr read };
+

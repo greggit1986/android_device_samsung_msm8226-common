@@ -36,3 +36,6 @@ allow init {
     proc_last_kmsg
 }:file setattr;
 
+allow init vendor_file:file execute;
+allow init hal_thermal_default:process setpgid;
+
