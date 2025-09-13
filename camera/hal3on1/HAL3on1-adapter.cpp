@@ -1413,6 +1413,11 @@ static void camera_convert_parameters(int camera_id, const char *settings, Camer
     params.unflatten(String8(settings));
     char *token = NULL;
 
+    uint8_t supportedHardwareLevel = ANDROID_INFO_SUPPORTED_HARDWARE_LEVEL_LIMITED;
+
+    Vector<uint8_t> available_capabilities;
+    available_capabilities.add(ANDROID_REQUEST_AVAILABLE_CAPABILITIES_BACKWARD_COMPATIBLE);
+
     static const camera_metadata_rational control_ae_compensation_step = {1, 3};
     metadata->update(ANDROID_CONTROL_AE_COMPENSATION_STEP, &control_ae_compensation_step, 1);
 
@@ -1558,7 +1563,21 @@ noaf:
         if (!strcmp(token, "manual"))
             available_awb_modes[wb_counter] = ANDROID_CONTROL_AWB_MODE_OFF;
 
-        if (available_awb_modes[wb_counter])
+        if (available_awb_modes[wb_counter] == 255) {
+            if (wb_counter == 0)
+                available_awb_modes[wb_counter] = ANDROID_CONTROL_AWB_MODE_AUTO;
+
+            if (strstr(wb_values, "manual") && camera_id == 0) {
+                available_awb_modes[wb_counter] = ANDROID_CONTROL_AWB_MODE_OFF;
+
+                static const uint8_t color_filter_arrangement = ANDROID_SENSOR_INFO_COLOR_FILTER_ARRANGEMENT_BGGR;
+                metadata->update(ANDROID_SENSOR_INFO_COLOR_FILTER_ARRANGEMENT,
+                              &color_filter_arrangement, 1);
+                available_capabilities.add(ANDROID_REQUEST_AVAILABLE_CAPABILITIES_MANUAL_POST_PROCESSING);
+
+                wb_counter++;
+            }
+        } else
             wb_counter++;
 
         token = strtok(NULL, ",");
@@ -1951,8 +1970,10 @@ noaf:
             token = strtok(NULL, ",");
         }
 
-        if(supported)
+        if(supported) {
             avail_ae_modes.add(ANDROID_CONTROL_AE_MODE_OFF);
+            available_capabilities.add(ANDROID_REQUEST_AVAILABLE_CAPABILITIES_MANUAL_SENSOR);
+        }
     }
 
     if (flash_mode) {

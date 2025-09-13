@@ -27,6 +27,14 @@ Android 12-15 with HAL3on1:
 CameraProvider <-> [HAL3on1 <-> HAL1] <-> Camera stack backend
 ***
 
+Implemented hardware support levels are:
+* LIMITED
+
+Implemented capabilities are:
+* BACKWARD_COMPATIBLE
+* MANUAL_SENSOR (if manual ISO and exposure control are available)
+* MANUAL_POST_PROCESSING (if manual white balance is available)
+
 How to use?
 
 1. Import HAL3on1 into your device tree.
