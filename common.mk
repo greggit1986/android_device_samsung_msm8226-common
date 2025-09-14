@@ -18,6 +18,7 @@
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/samsung \
+    hardware/qcom-caf/bt/libbt-vendor \
     vendor/qcom/opensource/power
 
 # Advanced Display
