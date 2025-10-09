@@ -29,3 +29,9 @@ prebuilt_etc {
     src: "etc/ueventd.qcom.rc",
     vendor: true,
 }
+
+sh_binary {
+    name: "init.post_boot.sh",
+    src: "etc/scripts/init.post_boot.sh",
+    vendor: true,
+}
