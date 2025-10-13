@@ -110,8 +110,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.hal3on1.use_sysfs_torch=1
 
 # Configstore
+#PRODUCT_PACKAGES += \
+#    disable_configstore
+
+# Configstore
 PRODUCT_PACKAGES += \
-    disable_configstore
+    android.hardware.configstore@1.1-service
 
 # CPUSETS
 PRODUCT_COPY_FILES += \
@@ -126,7 +130,7 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
@@ -141,6 +145,8 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service \
     android.hardware.drm-service.clearkey
 
 # fastbootd
@@ -161,8 +167,8 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl \
-    android.hardware.gnss@1.0-service \
+    android.hardware.gnss@1.0-impl.legacy \
+    android.hardware.gnss@1.0-service.legacy \
     gps.msm8226
 
 PRODUCT_COPY_FILES += \
@@ -384,8 +390,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service
+    android.hardware.vibrator@1.0-impl
 
 # VNDK
 PRODUCT_PACKAGES += \
