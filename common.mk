@@ -234,8 +234,7 @@ PRODUCT_COPY_FILES += \
 
 # Network - Do not spin up a separate process for the network stack, use an in-process APK.-msm8974
 PRODUCT_PACKAGES += \
-    InProcessNetworkStack \
-    com.android.tethering.inprocess
+    InProcessNetworkStack
 
 # Offline Charger-msm8974
 PRODUCT_PACKAGES += \
