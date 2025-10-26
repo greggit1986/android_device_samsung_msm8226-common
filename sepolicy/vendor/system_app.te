@@ -10,6 +10,7 @@ allow system_app hal_light_default:binder call;
 
 allow system_app hal_power_default:binder call;
 allow system_app hal_wifi_supplicant_default:binder call;
+allow system_app hal_wifi_default:binder call;
 
 dontaudit system_app {
   apex_service

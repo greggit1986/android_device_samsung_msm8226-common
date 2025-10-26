@@ -1,1 +1,3 @@
 allow installd radio_core_data_file:lnk_file getattr;
+
+allow installd vendor_file:file open;

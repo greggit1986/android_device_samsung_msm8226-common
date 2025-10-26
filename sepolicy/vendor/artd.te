@@ -1,6 +1,12 @@
 
 allow artd radio_data_file:lnk_file read;
-allow artd vendor_file:file { getattr read };
+allow artd vendor_file:file { getattr read open };
 allow artd radio_core_data_file:lnk_file read;
-allow artd same_process_hal_file:file read;
+allow artd same_process_hal_file:file { getattr open read execute };
 allow artd system_app_data_file:lnk_file read;
+allow artd app_data_file:lnk_file read;
+allow artd nfc_data_file:lnk_file read;
+
+allow artd apk_data_file:file create;
+
+

@@ -38,3 +38,7 @@ allow system_server fs_bpf_tethering:dir search;
 allow system_server sysfs_ausb:file { getattr read };
 allow system_server sysfs_vibamp:file read;
 allow system_server vendor_file:file { getattr read execute open };
+
+allow system_server debugfs:file { getattr open read };
+
+allow system_server default_android_service:service_manager find;

@@ -39,3 +39,4 @@ allow init {
 allow init vendor_file:file execute;
 allow init hal_thermal_default:process setpgid;
 
+allow init rild:process setpgid;

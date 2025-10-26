@@ -1,0 +1,17 @@
+
+allow extra_free_kbytes vendor_file:file { read getattr };
+allow recovery_persist vendor_file:file { read getattr };
+allow bpfloader vendor_file:file { read getattr };
+allow bootstat vendor_file:file { read getattr };
+allow traced_probes vendor_file:file { read getattr };
+allow traced vendor_file:file { read getattr };
+allow atrace vendor_file:file { read getattr };
+allow idmap vendor_file:file { read getattr };
+allow incidentd vendor_file:file { read getattr };
+allow installd vendor_file:file { read getattr };
+allow mediaextractor vendor_file:file { read getattr };
+allow mediametrics vendor_file:file { read getattr };
+allow wificond vendor_file:file { read getattr };
+allow gatekeeperd vendor_file:file { read getattr };
+allow usbd vendor_file:file { read getattr };
+allow adbd vendor_file:file { read getattr };

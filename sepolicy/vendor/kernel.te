@@ -1,0 +1,3 @@
+
+allow kernel vendor_file:file { getattr read open };
+

@@ -1,0 +1,3 @@
+
+allow kcmdlinectrl proc:file { getattr read open };
+

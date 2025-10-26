@@ -3,3 +3,5 @@ allow platform_app system_app_data_file:dir getattr;
 
 allow platform_app vendor_default_prop:file { open getattr };
 allow platform_app vendor_file:file { execute getattr open read };
+
+allow platform_app proc_version:file read;

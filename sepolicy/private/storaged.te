@@ -1,3 +1,4 @@
 
 allow storaged vendor_file:file { read getattr };
 
+allow storaged sysfs:file { open read getattr };

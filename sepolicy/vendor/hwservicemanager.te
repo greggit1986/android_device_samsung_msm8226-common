@@ -1,2 +1,2 @@
 
-allow hwservicemanager vendor_file:file { getattr read };
+allow hwservicemanager vendor_file:file { open getattr read };

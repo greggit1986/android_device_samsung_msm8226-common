@@ -45,3 +45,5 @@ allow hal_sensors_default {
 }:lnk_file read;
 
 allow hal_sensors_default system_lib_file:file execmod;
+allow hal_sensors_default sysfs:dir { read open };
+
