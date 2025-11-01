@@ -119,6 +119,7 @@ PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 # HIDL-afyon
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(COMMON_PATH)/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/audio_service/manifest.xml
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/radio/radio_service/manifest.xml
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000

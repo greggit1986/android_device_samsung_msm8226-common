@@ -314,6 +314,9 @@ PRODUCT_PACKAGES += \
     libsecnativefeature \
     libnetutils.vendor
 
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.4-service.legacy
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
