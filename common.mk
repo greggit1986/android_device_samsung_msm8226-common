@@ -129,7 +129,9 @@ PRODUCT_PACKAGES += \
     copybit.msm8226 \
     gralloc.msm8226 \
     hwcomposer.msm8226 \
-    memtrack.msm8226
+    memtrack.msm8226 \
+    libqdMetaData \
+    libui.vendor
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -301,7 +303,9 @@ PRODUCT_COPY_FILES += \
 # Power HAL
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
-    android.hardware.power.stats@1.0-service.mock
+    android.hardware.power.stats@1.0-service.mock \
+    libpower.vendor \
+    libsqlite.vendor
 
 $(call soong_config_set,qcom_power,set_interactive_ext_lib,power-ext-afyon)
 
