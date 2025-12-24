@@ -15,8 +15,10 @@
 # limitations under the License.
 #
 
-PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH) \
-                            hardware/samsung
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    hardware/samsung \
+    hardware/qcom-caf/bt/libbt-vendor
 
 # Advanced Display
 PRODUCT_PACKAGES += \
