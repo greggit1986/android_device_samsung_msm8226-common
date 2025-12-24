@@ -136,6 +136,9 @@ LZMA_RAMDISK_TARGETS := recovery
 TARGET_KERNEL_ADDITIONAL_FLAGS := HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8226
 
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive #\
+#                        androidboot.init_fatal_reboot_target=recovery
+
 # Legacy memfd
 TARGET_HAS_MEMFD_BACKPORT := true
 
@@ -159,7 +162,7 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
 # Partition
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 13551920 #12485760 #- use this for normal build - recovery img size is still too big
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 15051920 #12485760 #- use this for normal build - recovery img size is still too big
 #BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760 #- use this for real recovery.img
 #BOARD_CACHEIMAGE_PARTITION_SIZE := 721420288
 #BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2569011200

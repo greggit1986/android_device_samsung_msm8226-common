@@ -1,5 +1,5 @@
 
-allow flags_health_check keystore_crash_prop:file { getattr open };
+#allow flags_health_check keystore_crash_prop:file { getattr open };
 allow flags_health_check keystore_listen_prop:file { getattr open };
 allow flags_health_check last_boot_reason_prop:file { open };
 allow flags_health_check ctl_odsign_prop:file { open getattr };

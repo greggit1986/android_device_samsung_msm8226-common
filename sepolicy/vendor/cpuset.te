@@ -1,4 +1,5 @@
 type cpuset, domain;
-type cpuset_exec, exec_type, file_type;
+#JJEDIT type cpuset_exec, exec_type, file_type;
+type cpuset_exec, vendor_file_type, exec_type, file_type;
 
 permissive cpuset;

@@ -108,27 +108,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.lineage.livedisplay</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>IDisplayColorCalibration</name>
-            <instance>default</instance>
-        </interface>
-        <!--interface>
-            <name>IDisplayModes</name>
-            <instance>default</instance>
-        </interface-->
-        <interface>
-            <name>IReadingEnhancement</name>
-            <instance>default</instance>
-        </interface>
-        <!--interface>
-            <name>ISunlightEnhancement</name>
-            <instance>default</instance>
-        </interface-->
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.vibrator</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -143,6 +122,35 @@
         <version>1.0</version> 
         <interface>
             <name>IThermal</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.radio</name>
+        <transport>hwbinder</transport>
+        <impl level="generic"></impl>
+        <version>1.4</version>
+        <interface>
+            <name>IRadio</name>
+            <instance>slot1</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.radio.deprecated</name>
+        <transport>hwbinder</transport>
+        <impl level="generic"></impl>
+        <version>1.0</version>
+        <interface>
+            <name>IOemHook</name>
+            <instance>slot1</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.radio.config</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IRadioConfig</name>
             <instance>default</instance>
         </interface>
     </hal>
