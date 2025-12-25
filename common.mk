@@ -76,11 +76,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
     libbt-vendor
 
-# Bluetooth WiPower
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.bluetooth.emb_wp_mode=false \
-    ro.vendor.bluetooth.wipower=false
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 960
 TARGET_SCREEN_WIDTH := 540
