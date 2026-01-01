@@ -85,6 +85,7 @@ PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
     camera.legacy.msm8226 \
     camera.msm8226 \
+    libcamera_compat \
     libxml2 \
     GrapheneCamera
 
