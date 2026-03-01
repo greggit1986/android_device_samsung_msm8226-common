@@ -315,7 +315,7 @@ PRODUCT_PACKAGES += \
     libnetutils.vendor
 
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.4-service.legacy
+    android.hardware.radio@1.4-service.afyon
 
 # Ramdisk
 PRODUCT_PACKAGES += \

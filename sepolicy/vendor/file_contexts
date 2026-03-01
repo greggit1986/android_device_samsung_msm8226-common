@@ -166,3 +166,7 @@
 
 #libacdapi_clb.so (GeomagneticSensor sensor)
 /(vendor|system/vendor)/lib/libacdapi_clb\.so    u:object_r:same_process_hal_file:s0
+
+# Radio HAL
+/(vendor|system/vendor)/bin/hw/android\.hardware\.radio@1\.4-service.afyon    u:object_r:hal_radio_default_exec:s0
+
