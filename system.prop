@@ -104,6 +104,9 @@ debug.composition.type=c2d
 debug.disable.bwc=1
 dev.pm.dyn_samplingrate=1
 
+#Disable hardware navigation keys in favour of gesture navigation
+qemu.hw.mainkeys=0
+
 # GPS
 persist.gps.qc_nlp_in_use=0
 ro.gps.agps_provider=1
