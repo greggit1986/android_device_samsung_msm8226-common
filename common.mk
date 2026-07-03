@@ -15,8 +15,10 @@
 # limitations under the License.
 #
 
-PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH) \
-                            hardware/samsung
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    hardware/samsung \
+    vendor/qcom/opensource/power
 
 # Advanced Display
 PRODUCT_PACKAGES += \
@@ -305,6 +307,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
     android.hardware.power.stats@1.0-service.mock
+
+$(call soong_config_set,qcom_power,set_interactive_ext_lib,power-ext-afyon)
 
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
