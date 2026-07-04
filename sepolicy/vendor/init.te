@@ -40,3 +40,8 @@ allow init vendor_file:file execute;
 allow init hal_thermal_default:process setpgid;
 
 allow init rild:process setpgid;
+
+allow init hal_vibrator_service:service_manager { add };
+allow init sysfs_vibamp:file { write };
+allow init servicemanager:binder { call transfer };
+allow init same_process_hal_file:file { execute };

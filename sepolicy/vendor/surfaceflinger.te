@@ -7,3 +7,6 @@ allow surfaceflinger vendor_default_prop:file { getattr open };
 allow surfaceflinger hal_graphics_allocator_hwservice:hwservice_manager { add };
 allow surfaceflinger sysfs_graphics:dir search;
 allow surfaceflinger vendor_file:file { read getattr open execute };
+
+allow surfaceflinger boot_animation_prop:file { read open getattr };
+allow vendor_init mpctl_data_file:dir { getattr setattr };

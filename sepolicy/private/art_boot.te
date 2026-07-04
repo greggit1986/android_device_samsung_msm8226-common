@@ -1,2 +1,0 @@
-
-allow art_boot vendor_file:file { getattr read };

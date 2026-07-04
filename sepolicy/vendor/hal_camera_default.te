@@ -6,10 +6,12 @@ allow hal_camera_default sysfs:file { write };
 
 allow hal_camera_default system_data_root_file:sock_file write;
 
-allow hal_camera_default default_prop:file { read open };
+allow hal_camera_default default_prop:file { read open getattr };
 allow hal_camera_default sysfs_camera:dir search;
 allow hal_camera_default sysfs_leds:file { read open write };
-allow hal_camera_default system_prop:file { read open };
+allow hal_camera_default system_prop:file { read open getattr };
 
 allow hal_camera_default hal_graphics_allocator_service:service_manager find;
 allow hal_camera_default vendor_file:file execmod;
+
+allow hal_camera_default sysfs_camera:file { open read };
