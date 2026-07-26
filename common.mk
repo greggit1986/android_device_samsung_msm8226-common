@@ -397,8 +397,7 @@ PRODUCT_PACKAGES += \
     libcrypto-v33 \
     libutils-v33 \
     libhidlbase-v32 \
-    libprotobuf-cpp-lite-v29 \
-    libcutils-v29
+    libprotobuf-cpp-lite-v29
 
 # Wifi
 PRODUCT_PACKAGES += \
