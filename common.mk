@@ -317,7 +317,8 @@ PRODUCT_COPY_FILES += \
 # Radio
 PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
-    libsecnativefeature
+    libsecnativefeature \
+    libnetutils.vendor
 
 # Ramdisk
 PRODUCT_PACKAGES += \
