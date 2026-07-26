@@ -1,7 +1,14 @@
 allow platform_app radio_data_file:dir getattr;
 allow platform_app system_app_data_file:dir getattr;
 
-allow platform_app vendor_default_prop:file { open getattr };
 allow platform_app vendor_file:file { execute getattr open read };
 
-allow platform_app proc_version:file read;
+allow platform_app vendor_default_prop:file r_file_perms;
+allow platform_app proc_version:file r_file_perms;
+
+allow platform_app sysfs_batteryinfo:dir search;
+allow platform_app sysfs_batteryinfo:file r_file_perms;
+r_dir_file(platform_app, sysfs_thermal)
+
+allow platform_app self:netlink_route_socket { create bind read };
+allow platform_app app_data_file:file rx_file_perms;
