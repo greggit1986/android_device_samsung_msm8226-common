@@ -1,7 +1,7 @@
 android_app_import {
     name: "GrapheneCamera",
 
-    apk: "GrapheneCamera.apk",
+    apk: "Camera-80.apk",
     certificate: "platform",
 
     overrides: [
