@@ -403,9 +403,6 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
-#Disable hardware navigation keys in favour of gesture navigation
-    write /sys/bus/i2c/drivers/cyttsp4_i2c_adapter/5-0024/input/input3/enabled 0
-
 on early-boot
     # Set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
