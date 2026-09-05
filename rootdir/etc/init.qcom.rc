@@ -260,6 +260,13 @@ on post-fs-data
     # Create directory used by radio subsystem
     mkdir /data/radio 0770 radio radio
 
+    # Just in case, create the Treble-expected directory for QMUX sockets
+    mkdir /data/vendor/radio 0770 radio radio
+    
+    # Symlink them so older blobs pointing to /data/radio redirect to /data/vendor/radio
+    # (or vice-versa, depending on which daemon is complaining)
+    symlink /data/vendor/radio /data/radio
+
     # Create directory used by the DASH client
     mkdir /data/misc/dash 0770 media audio
 
