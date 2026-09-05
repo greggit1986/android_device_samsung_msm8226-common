@@ -320,7 +320,8 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.usb.rc \
     ueventd.qcom.rc \
-    init.qcom.bt.sh
+    init.qcom.bt.sh \
+    init.post_boot.sh
 
 #PRODUCT_PACKAGES += \
 #    fstab.qcom \
