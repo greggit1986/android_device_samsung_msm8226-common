@@ -1,6 +1,6 @@
 cc_binary {
-    name: "android.hardware.radio.config@1.1-service.hh",
-    init_rc: ["android.hardware.radio.config@1.1-service.hh.rc"],
+    name: "android.hardware.radio.config@1.1-service.afyon",
+    init_rc: ["android.hardware.radio.config@1.1-service.afyon.rc"],
     relative_install_path: "hw",
     vendor: true,
     srcs: [

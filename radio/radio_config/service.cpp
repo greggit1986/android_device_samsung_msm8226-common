@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.radio.config@1.1-service-hh"
+#define LOG_TAG "android.hardware.radio.config@1.1-service-afyon"
 
 #include <android/hardware/radio/config/1.1/IRadioConfig.h>
 #include <hidl/HidlTransportSupport.h>
