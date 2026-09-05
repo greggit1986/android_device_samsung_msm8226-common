@@ -169,7 +169,7 @@ ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 # RIL-afyon
 ro.telephony.default_network=9
 persist.radio.apm_sim_not_pwdn=1
-ro.use_data_netmgrd=false
+ro.use_data_netmgrd=true
 ro.data.large_tcp_window_size=true
 
 # RIL

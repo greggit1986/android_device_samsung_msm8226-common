@@ -874,6 +874,12 @@ service qmuxd /vendor/bin/qmuxd
     user radio
     group radio audio bluetooth gps diag oem_2950 log
 
+service vendor.netmgrd /vendor/bin/netmgrd
+    class main
+    user root
+    group radio readproc system wakelock oem_2950 net_raw inet
+    capabilities NET_ADMIN NET_RAW
+
 service vendor.ril-daemon /vendor/bin/hw/rild
     class main
     user radio
