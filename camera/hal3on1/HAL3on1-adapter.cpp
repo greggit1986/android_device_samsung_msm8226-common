@@ -712,14 +712,32 @@ static CameraParameters previous_params;
 
 static int camera3_process_capture_request(const camera3_device_t* device, camera3_capture_request_t* request)
 {
+
+    // 1. Validate request immediately before touching fields
+    if (!request || request->num_output_buffers == 0 || !request->output_buffers) {
+        ALOGE("Invalid capture request");
+        return -EINVAL;
+    }
+
     adapter_camera3_device_t *adapter = (adapter_camera3_device_t *)device;
     camera_device_t* hal1_device = adapter->hal1_device;
 
     int32_t sensor_width = static_metadata[current_camera_id].find(ANDROID_SENSOR_INFO_ACTIVE_ARRAY_SIZE).data.i32[2];
     int32_t sensor_height = static_metadata[current_camera_id].find(ANDROID_SENSOR_INFO_ACTIVE_ARRAY_SIZE).data.i32[3];
+
+    // 2. Handle NULL settings via an internal cache (persistent across frames)
+    static CameraMetadata cached_settings; 
     CameraMetadata cm;
-    cm = request->settings;
-    uint8_t capture_intent;
+
+    if (request->settings != nullptr) {
+        cm = request->settings;
+        cached_settings = request->settings; // Update cache with fresh framework settings
+    } else {
+        // Framework sent NULL because settings haven't changed; use cached values
+        cm = cached_settings; 
+    }
+
+   uint8_t capture_intent;
     bool video_frame = false;
     uint8_t ae_mode = ANDROID_CONTROL_AE_MODE_ON;
     bool use_scene = false;
@@ -1068,13 +1086,19 @@ static int camera3_process_capture_request(const camera3_device_t* device, camer
 
     if (strcmp(halt_expo, "-1"))
     {
-    int64_t exposure_time = cm.find(ANDROID_SENSOR_EXPOSURE_TIME).data.i64[0];
+    // 3. Fix the unsafe exposure check block
+        // Explicitly verify the metadata tag exists before accessing data arrays- 
+        if (cm.exists(ANDROID_SENSOR_EXPOSURE_TIME)) {
+    		int64_t exposure_time = cm.find(ANDROID_SENSOR_EXPOSURE_TIME).data.i64[0];
 
-        double result = (double)exposure_time / 1000000.0;
-        sprintf(halt_expo, "%.6f", result);
+        	double result = (double)exposure_time / 1000000.0;
+        	sprintf(halt_expo, "%.6f", result);
 
-        current_params.set("exposure-time", halt_expo);
-        HAL1_CALL(hal1_device, set_parameters, current_params.flatten());
+        	current_params.set("exposure-time", halt_expo);
+       		HAL1_CALL(hal1_device, set_parameters, current_params.flatten());
+        } else {
+            ALOGW("halt_expo is active but ANDROID_SENSOR_EXPOSURE_TIME metadata is missing");
+        }
     }
 
     char param1[PROPERTY_VALUE_MAX];
