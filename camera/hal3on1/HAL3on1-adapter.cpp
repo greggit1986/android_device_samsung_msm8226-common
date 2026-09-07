@@ -1906,22 +1906,26 @@ noaf:
 
     const char* fps_ranges_str = params.get("preview-fps-range");
 
-    int32_t available_fps_ranges[2];
-    size_t j = 0;
     if (fps_ranges_str) {
         int min_fps = 0;
         int max_fps = 0;
         sscanf(fps_ranges_str, "%d,%d", &min_fps, &max_fps);
 
-        for (size_t i = 0; i < preview_sizes.size(); i++) {
+        size_t num_ranges = preview_sizes.size();
+        int32_t* available_fps_ranges = new int32_t[num_ranges * 2];
+        size_t j = 0;
+
+        for (size_t i = 0; i < num_ranges; i++) {
             available_fps_ranges[j] = min_fps / 1000;
             available_fps_ranges[j+1] = max_fps / 1000;
             j+=2;
-        }
     }
 
     metadata->update(ANDROID_CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES,
-                     available_fps_ranges, sizeof(available_fps_ranges));
+                     available_fps_ranges, j);
+                     
+    delete[] available_fps_ranges;
+}
 
     size_t max_stream_configs_size = (picture_sizes.size() + preview_sizes.size() + video_sizes.size()) * scalar_formats_count * 4;
     int32_t available_stream_configs[max_stream_configs_size];
