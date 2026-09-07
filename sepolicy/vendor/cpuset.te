@@ -1,4 +1,13 @@
 type cpuset, domain;
-type cpuset_exec, exec_type, file_type;
+type cpuset_exec, exec_type, file_type, vendor_file_type;
 
-permissive cpuset;
+init_daemon_domain(cpuset)
+
+allow cpuset vendor_shell_exec:file { rx_file_perms };
+allow cpuset vendor_toolbox_exec:file rx_file_perms;
+
+allow cpuset cgroup:file { read };
+# add kmsg access permission to log cpuset status
+allow cpuset kmsg_device:chr_file { w_file_perms };
+
+allow init cpuset_exec:file { execute };
