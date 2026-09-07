@@ -26,3 +26,6 @@ allow rild radio_core_data_file:file { create open read setattr write unlink };
 allow rild radio_core_data_file:lnk_file read;
 dontaudit rild system_data_file:dir getattr;
 allow rild system_userdir_file:dir { getattr search };
+
+allow rild radio_core_data_file:dir { open read };
+allow rild radio_core_data_file:file { getattr ioctl lock };

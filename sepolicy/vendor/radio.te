@@ -1,2 +1,4 @@
 
 allow radio vendor_file:file { open getattr read execute };
+
+allow radio rild:unix_stream_socket connectto;

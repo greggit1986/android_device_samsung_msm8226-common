@@ -1,0 +1,9 @@
+get_prop(netmgrd, default_prop)
+get_prop(netmgrd, radio_prop)
+
+allow netmgrd system_file:file { lock open read };
+
+allow netmgrd fs_bpf:dir search;
+
+allow netmgrd default_prop:file read;
+allow netmgrd radio_prop:file read;
